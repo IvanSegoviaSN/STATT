@@ -3,6 +3,9 @@
     "jest": "^23.6.0",
     "@types/jest": "^23.3.12"
   },
+  "engines": {
+    "node": "12.17.x"
+  },
   "scripts": {
     "start": "node app.js"
   }
