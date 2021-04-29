@@ -1,6 +1,7 @@
 const http = require('http')
 
 const port = process.env.PORT || 3000
+console.log(process.env.MONGODB_URI)
 
 const server = http.createServer((req, res) => {
     res.statusCode = 200
