@@ -1,7 +1,9 @@
 {
   "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "express": "^4.17.1",
     "jest": "^23.6.0",
-    "@types/jest": "^23.3.12"
+    "mongoose": "^5.12.6"
   },
   "engines": {
     "node": "12.17.x"
