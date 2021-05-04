@@ -10,6 +10,13 @@ const userSchema = new Schema({
         trim: true,
         minlength: 3
     },
+    userdummie: {
+        type: Boolean,
+        required: true,
+        unique: true,
+        trim: true,
+        minlength: 3
+    },
 }, {
     timestamps: true,
 });
