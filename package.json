@@ -2,8 +2,7 @@
   "devDependencies": {
     "@types/jest": "^23.3.12",
     "express": "^4.17.1",
-    "jest": "^23.6.0",
-    "mongoose": "^5.12.6"
+    "jest": "^23.6.0"
   },
   "engines": {
     "node": "12.17.x"
