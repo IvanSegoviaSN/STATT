@@ -12,7 +12,7 @@ server.get('/', (req, res) => {
 });
 
 server.use(express.json());
-server.use('/nombre', userRouter);
+server.use('/user', userRouter);
 
 const uri = "mongodb+srv://brawlUser:wDAM7MeQcEg1SmUL@cluster0.wakn5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
