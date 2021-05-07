@@ -28,7 +28,7 @@ router.get('/player', async (req, res) => {
 });
 
 router.get('/player/:tag', async (req, res) => {
-    axios.put('http://localhost:3000/api/brawlAPI/' + req.params.tag)
+    axios.put('http://localhost:3000/api/brawlAPI/' + req.params.tag || 'https://www.statt.es/api/brawlAPI/' + req.params.tag)
         .then((response) => {
             res.json(response.data);
         }).catch((err) => {

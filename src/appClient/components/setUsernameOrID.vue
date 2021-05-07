@@ -126,7 +126,7 @@ export default {
     searchUser() {
       switch (this.getByTag.game) {
         case 'Brawl Stars':
-          axios.get("http://localhost:3000/api/main/player/" + this.getByTag.tag).then((result) => {
+          axios.get("http://localhost:3000/api/main/player/" + this.getByTag.tag || 'https://www.statt.es/api/main/player/' + this.getByTag.tag).then((result) => {
             console.log(result.data);
           });
           break;

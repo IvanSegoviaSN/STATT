@@ -30,6 +30,6 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "webpack": "webpack --mode production --watch"
+    "webpack": "webpack --mode development --watch"
   }
 }
