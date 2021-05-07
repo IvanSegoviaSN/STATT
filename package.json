@@ -1,16 +1,35 @@
 {
+  "name": "STATT",
+  "version": "1.0.0",
+  "description": "Main STATT",
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
-    "mongoose": "^5.12.7"
+    "mongoose": "^5.12.7",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "vue-resource": "^1.5.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
     "@types/jest": "^23.3.12",
-    "jest": "^23.6.0"
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0",
+    "nodemon": "^2.0.7",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0"
   },
   "engines": {
     "node": "12.17.x"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "webpack": "webpack --mode development --watch"
   }
 }
