@@ -8,6 +8,9 @@
     "mongoose": "^5.12.7",
     "morgan": "^1.10.0",
     "node-fetch": "^2.6.1",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12",
     "vue-resource": "^1.5.2"
   },
   "devDependencies": {
@@ -18,9 +21,6 @@
     "babel-preset-env": "^1.7.0",
     "jest": "^23.6.0",
     "nodemon": "^2.0.7",
-    "vue": "^2.6.12",
-    "vue-loader": "^15.9.6",
-    "vue-template-compiler": "^2.6.12",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0"
   },
