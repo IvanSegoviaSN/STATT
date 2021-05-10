@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/STATT.iml" filepath="$PROJECT_DIR$/.idea/STATT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../statt-api/.idea/STATT-api.iml" filepath="$PROJECT_DIR$/../statt-api/.idea/STATT-api.iml" />
     </modules>
   </component>
 </project>
