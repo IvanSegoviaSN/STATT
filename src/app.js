@@ -20,17 +20,10 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // Routes
-
-app.use('/api/main', require('./routes/mainRoutes'));
-app.use('/api/brawlAPI', require('./routes/games/brawlAPIRoutes'));
+app.use('/api/games', require('./routes/app'));
 
 // Static files
 app.use(express.static(__dirname + '/public'));
-
-/*
-app.get('*', async (req, res) => {
-    res.sendFile('public/404.html', {root: __dirname })
-});*/
 
 // 404 Page
 app.use(function(req,res){
