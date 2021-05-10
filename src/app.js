@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 
 // Server
-const app = express();
+const app = express();D
 
 // MongoDB
 mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://brawlUser:wDAM7MeQcEg1SmUL@cluster0.wakn5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
