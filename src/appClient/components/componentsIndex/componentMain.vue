@@ -6,20 +6,19 @@
     <!-- /FORM BOX DECORATION -->
 
     <!-- FORM BOX TITLE -->
-    <h2 class="form-box-title">¡ Tengo mi usuario !</h2>
+    <h2 class="form-box-title">Selecciona un juego.</h2>
     <!-- /FORM BOX TITLE -->
 
     <!-- FORM -->
-    <form class="form">
+    <form @submit.prevent="sendUserData" class="form">
       <!-- FORM ROW -->
       <div class="form-row">
         <!-- FORM ITEM -->
         <div class="form-item">
           <!-- FORM INPUT -->
           <div class="form-select">
-            <label for="id-game">Juego</label>
-            <select id="id-game" v-model="selectedGame" v-on="expandPanel(selectedGame)">
-              <option>Selecciona un juego</option>
+            <label for="id-game">Selecciona juego.</label>
+            <select v-model="selectedGame" id="id-game">
               <option>Brawl Stars</option>
               <option>Clash Royale</option>
               <option>Clash of Clans</option>
@@ -32,13 +31,13 @@
       <!-- /FORM ROW -->
 
       <!-- FORM ROW -->
-      <div v-if="selectedGame == 'Brawl Stars'" class="form-row">
+      <div class="form-row">
         <!-- FORM ITEM -->
         <div class="form-item">
           <!-- FORM INPUT -->
           <div class="form-input">
-            <label for="login-password">Password</label>
-            <input type="password" id="login-password" name="login_password">
+            <label for="usertag">Nombre de usuario: </label>
+            <input v-model="userTagName" type="text" id="usertag" name="usertag">
           </div>
           <!-- /FORM INPUT -->
         </div>
@@ -62,7 +61,7 @@
               <!-- /ICON CROSS -->
             </div>
             <!-- /CHECKBOX BOX -->
-            <label for="login-remember">Remember Me</label>
+            <label for="login-remember">Guardar sesión.</label>
           </div>
           <!-- /CHECKBOX WRAP -->
         </div>
@@ -71,7 +70,7 @@
         <!-- FORM ITEM -->
         <div class="form-item">
           <!-- FORM LINK -->
-          <a class="form-link" href="#">Forgot Password?</a>
+          <a class="form-link">¿Cómo obtengo uno?</a>
           <!-- /FORM LINK -->
         </div>
         <!-- /FORM ITEM -->
@@ -83,7 +82,7 @@
         <!-- FORM ITEM -->
         <div class="form-item">
           <!-- BUTTON -->
-          <button class="button medium secondary">Login to your Account!</button>
+          <button class="button medium secondary">¡ Comprobar y visualizar !</button>
           <!-- /BUTTON -->
         </div>
         <!-- /FORM ITEM -->
@@ -93,30 +92,25 @@
     <!-- /FORM -->
 
     <!-- LINED TEXT -->
-    <p class="lined-text">Login with your Social Account</p>
+    <p class="lined-text"><a class="form-link" href="">Política de privacidad y cookies.</a></p>
     <!-- /LINED TEXT -->
   </div>
   <!-- /FORM BOX -->
 </template>
 
 <script>
+
 export default {
   name: "componentMain",
   data() {
     return {
-      selectedGame: ''
+      selectedGame: 'Ingresa nombre de usuario.',
+      userTagName: ''
     }
   },
   methods: {
-    expandPanel(game) {
-      switch (game) {
-        case 'Brawl Stars':
-          break;
-        case 'Clash Royale':
-          break;
-        case 'Clans of Clans':
-          break;
-      }
+    sendUserData() {
+
     }
   }
 }

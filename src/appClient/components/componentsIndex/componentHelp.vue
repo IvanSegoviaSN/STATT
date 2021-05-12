@@ -6,112 +6,66 @@
     <!-- /FORM BOX DECORATION -->
 
     <!-- FORM BOX TITLE -->
-    <h2 class="form-box-title">Create your Account!</h2>
+    <h2 class="form-box-title">¿Cómo obtengo uno?</h2>
     <!-- /FORM BOX TITLE -->
 
-    <!-- FORM -->
-    <form class="form">
-      <!-- FORM ROW -->
-      <div class="form-row">
-        <!-- FORM ITEM -->
-        <div class="form-item">
-          <!-- FORM INPUT -->
-          <div class="form-input">
-            <label for="register-email">Your Email</label>
-            <input type="text" id="register-email" name="register_email">
-          </div>
-          <!-- /FORM INPUT -->
-        </div>
-        <!-- /FORM ITEM -->
-      </div>
-      <!-- /FORM ROW -->
+    <!-- FORM TEXT -->
+    <p class="form-text">Para acceder a la plataforma se necesita un nombre de usuario, aquí te facilitamos todo a través de guías.</p>
+    <!-- /FORM TEXT -->
 
-      <!-- FORM ROW -->
-      <div class="form-row">
-        <!-- FORM ITEM -->
-        <div class="form-item">
-          <!-- FORM INPUT -->
-          <div class="form-input">
-            <label for="register-username">Username</label>
-            <input type="text" id="register-username" name="register_username">
-          </div>
-          <!-- /FORM INPUT -->
-        </div>
-        <!-- /FORM ITEM -->
-      </div>
-      <!-- /FORM ROW -->
+    <!-- GRID -->
+    <div class="centered-on-mobile">
+      <!-- USER PREVIEW -->
+      <div class="user-preview">
+        <!-- USER PREVIEW INFO -->
+        <div class="user-preview-info">
 
-      <!-- FORM ROW -->
-      <div class="form-row">
-        <!-- FORM ITEM -->
-        <div class="form-item">
-          <!-- FORM INPUT -->
-          <div class="form-input">
-            <label for="register-password">Password</label>
-            <input type="password" id="register-password" name="register_password">
-          </div>
-          <!-- /FORM INPUT -->
-        </div>
-        <!-- /FORM ITEM -->
-      </div>
-      <!-- /FORM ROW -->
+          <p class="lined-text"><i>Brawl Stars</i></p>
+          <!-- USER PREVIEW ACTIONS -->
+          <div class="user-preview-actions">
 
-      <!-- FORM ROW -->
-      <div class="form-row">
-        <!-- FORM ITEM -->
-        <div class="form-item">
-          <!-- FORM INPUT -->
-          <div class="form-input">
-            <label for="register-password-repeat">Repeat Password</label>
-            <input type="password" id="register-password-repeat" name="register_password_repeat">
+            <!-- BUTTON -->
+            <p class="button secondary">
+              Abrir guía
+            </p>
+            <!-- /BUTTON -->
           </div>
-          <!-- /FORM INPUT -->
-        </div>
-        <!-- /FORM ITEM -->
-      </div>
-      <!-- /FORM ROW -->
+          <!-- /USER PREVIEW ACTIONS -->
 
-      <!-- FORM ROW -->
-      <div class="form-row">
-        <!-- FORM ITEM -->
-        <div class="form-item">
-          <!-- CHECKBOX WRAP -->
-          <div class="checkbox-wrap">
-            <input type="checkbox" id="register-newsletter" name="register_newsletter" checked>
-            <!-- CHECKBOX BOX -->
-            <div class="checkbox-box">
-              <!-- ICON CROSS -->
-              <svg class="icon-cross">
-                <use xlink:href="#svg-cross"></use>
-              </svg>
-              <!-- /ICON CROSS -->
-            </div>
-            <!-- /CHECKBOX BOX -->
-            <label for="register-newsletter">Send me news and updates via email</label>
+          <p class="lined-text"><i>Clash Royale</i></p>
+          <!-- USER PREVIEW ACTIONS -->
+          <div class="user-preview-actions">
+
+            <!-- BUTTON -->
+            <p class="button secondary">
+              Obtener
+            </p>
+            <!-- /BUTTON -->
           </div>
-          <!-- /CHECKBOX WRAP -->
-        </div>
-        <!-- /FORM ITEM -->
-      </div>
-      <!-- /FORM ROW -->
+          <!-- /USER PREVIEW ACTIONS -->
 
-      <!-- FORM ROW -->
-      <div class="form-row">
-        <!-- FORM ITEM -->
-        <div class="form-item">
-          <!-- BUTTON -->
-          <button class="button medium primary">Register Now!</button>
-          <!-- /BUTTON -->
+          <p class="lined-text"><i>Clash of Clans</i></p>
+          <!-- USER PREVIEW ACTIONS -->
+          <div class="user-preview-actions">
+
+            <!-- BUTTON -->
+            <p class="button secondary">
+              Obtener
+            </p>
+            <!-- /BUTTON -->
+          </div>
+          <!-- /USER PREVIEW ACTIONS -->
         </div>
-        <!-- /FORM ITEM -->
+        <!-- /USER PREVIEW INFO -->
       </div>
-      <!-- /FORM ROW -->
-    </form>
-    <!-- /FORM -->
+      <!-- /USER PREVIEW -->
+    </div>
+    <!-- /GRID -->
 
     <!-- FORM TEXT -->
-    <p class="form-text">You'll receive a confirmation email in your inbox with a link to activate your account. If you have any problems, <a href="#">contact us</a>!</p>
+    <p class="form-text">Selecciona un juego de la lista con el que podrás obtener información para obtener tu nombre de usuario.</p>
     <!-- /FORM TEXT -->
+
   </div>
   <!-- /FORM BOX -->
 </template>
