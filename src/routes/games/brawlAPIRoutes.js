@@ -6,13 +6,13 @@ const brawlModel = require('../../models/games/brawlModel');
 // Axios HTTP
 const axios = require("axios");
 
-router.get('/:tag', async (req, res) => {
+/*router.get('/:tag', async (req, res) => {
     const data = await brawlModel.find({tag: req.params.tag});
     data.toString().length < 1 ? res.sendStatus(404) : res.json(data);
 });
+*/
 
-
-router.put('/:tag', async (req, res) => {
+router.get('/:tag', async (req, res) => {
     let next = true;
     const response = await axios({
         url: `https://api.brawlstars.com/v1/players/%20${req.params.tag}`,
