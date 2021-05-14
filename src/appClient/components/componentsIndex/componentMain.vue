@@ -100,17 +100,20 @@
 
 <script>
 
+import axios from "axios";
+
 export default {
   name: "componentMain",
   data() {
     return {
       selectedGame: 'Ingresa nombre de usuario.',
-      userTagName: ''
+      userTagName: '',
+      error: false
     }
   },
   methods: {
     sendUserData() {
-
+      axios('/link-api/' + this.userTagName).then(response => response.data == 404 ? alert("NOPE") : window.location.replace("/panel"));
     }
   }
 }
