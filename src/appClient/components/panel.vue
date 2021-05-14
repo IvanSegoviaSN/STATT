@@ -25,9 +25,6 @@ export default {
       casa: false
     };
   },
-  methods: {
-
-  },
   components: {
     componentHeader,
     componentNavigation,

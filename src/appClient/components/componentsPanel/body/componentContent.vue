@@ -8,7 +8,7 @@
       <!-- /SECTION BANNER ICON -->
 
       <!-- SECTION BANNER TITLE -->
-      <p class="section-banner-title">Usuario</p>
+      <p class="section-banner-title">{{this.name + '#' + this.tag}}</p>
       <!-- /SECTION BANNER TITLE -->
 
       <!-- SECTION BANNER TEXT -->
@@ -40,11 +40,11 @@
         <!-- PROFILE STATS COVER -->
         <div class="profile-stats-cover">
           <!-- PROFILE STATS COVER TITLE -->
-          <p class="profile-stats-cover-title">Welcome Back!</p>
+          <p class="profile-stats-cover-title">¡Bienvenid@!</p>
           <!-- /PROFILE STATS COVER TITLE -->
 
           <!-- PROFILE STATS COVER TEXT -->
-          <p class="profile-stats-cover-text">Marina Valentine</p>
+          <p class="profile-stats-cover-text">{{this.name}}</p>
           <!-- /PROFILE STATS COVER TEXT -->
         </div>
         <!-- /PROFILE STATS COVER -->
@@ -104,7 +104,7 @@
               <!-- /USER AVATAR BADGE CONTENT -->
 
               <!-- USER AVATAR BADGE TEXT -->
-              <p class="user-avatar-badge-text">24</p>
+              <p class="user-avatar-badge-text">{{this.expLevel}}</p>
               <!-- /USER AVATAR BADGE TEXT -->
             </div>
             <!-- /USER AVATAR BADGE -->
@@ -122,15 +122,15 @@
               <!-- /FEATURED STAT ICON -->
 
               <!-- FEATURED STAT TITLE -->
-              <p class="featured-stat-title">28.4</p>
+              <p class="featured-stat-title">{{this.expPoints}}</p>
               <!-- /FEATURED STAT TITLE -->
 
               <!-- FEATURED STAT SUBTITLE -->
-              <p class="featured-stat-subtitle">Posts</p>
+              <p class="featured-stat-subtitle">Puntos</p>
               <!-- /FEATURED STAT SUBTITLE -->
 
               <!-- FEATURED STAT TEXT -->
-              <p class="featured-stat-text">Avg Month</p>
+              <p class="featured-stat-text">Media mensual</p>
               <!-- /FEATURED STAT TEXT -->
             </div>
             <!-- /FEATURED STAT -->
@@ -144,15 +144,15 @@
               <!-- /FEATURED STAT ICON -->
 
               <!-- FEATURED STAT TITLE -->
-              <p class="featured-stat-title">69.7</p>
+              <p class="featured-stat-title">{{this.expLevel}}</p>
               <!-- /FEATURED STAT TITLE -->
 
               <!-- FEATURED STAT SUBTITLE -->
-              <p class="featured-stat-subtitle">Comments</p>
+              <p class="featured-stat-subtitle">Nivel</p>
               <!-- /FEATURED STAT SUBTITLE -->
 
               <!-- FEATURED STAT TEXT -->
-              <p class="featured-stat-text">Avg Month</p>
+              <p class="featured-stat-text">Media mensual</p>
               <!-- /FEATURED STAT TEXT -->
             </div>
             <!-- /FEATURED STAT -->
@@ -167,11 +167,11 @@
         <!-- STATS DECORATION -->
         <div class="stats-decoration v2 big secondary">
           <!-- STATS DECORATION TITLE -->
-          <p class="stats-decoration-title">33</p>
+          <p class="stats-decoration-title">{{this.threeVictories}}</p>
           <!-- /STATS DECORATION TITLE -->
 
           <!-- STATS DECORATION SUBTITLE -->
-          <p class="stats-decoration-subtitle">Post Engagements</p>
+          <p class="stats-decoration-subtitle">Victorias 3vs3</p>
           <!-- /STATS DECORATION SUBTITLE -->
 
           <!-- STATS DECORATION TEXT -->
@@ -201,11 +201,11 @@
         <!-- STATS DECORATION -->
         <div class="stats-decoration v2 big primary">
           <!-- STATS DECORATION TITLE -->
-          <p class="stats-decoration-title">126</p>
+          <p class="stats-decoration-title">{{ this.soloVictories }}</p>
           <!-- /STATS DECORATION TITLE -->
 
           <!-- STATS DECORATION SUBTITLE -->
-          <p class="stats-decoration-subtitle">Profile Views</p>
+          <p class="stats-decoration-subtitle">Victorias Solo</p>
           <!-- /STATS DECORATION SUBTITLE -->
 
           <!-- STATS DECORATION TEXT -->
@@ -237,11 +237,11 @@
         <!-- STATS DECORATION -->
         <div class="stats-decoration v2 big secondary">
           <!-- STATS DECORATION TITLE -->
-          <p class="stats-decoration-title">33</p>
+          <p class="stats-decoration-title">{{ this.duoVictories }}</p>
           <!-- /STATS DECORATION TITLE -->
 
           <!-- STATS DECORATION SUBTITLE -->
-          <p class="stats-decoration-subtitle">Post Engagements</p>
+          <p class="stats-decoration-subtitle">Victorias Duo</p>
           <!-- /STATS DECORATION SUBTITLE -->
 
           <!-- STATS DECORATION TEXT -->
@@ -271,11 +271,11 @@
         <!-- STATS DECORATION -->
         <div class="stats-decoration v2 big primary">
           <!-- STATS DECORATION TITLE -->
-          <p class="stats-decoration-title">126</p>
+          <p class="stats-decoration-title">{{ this.isQualifiedFromChampionshipChallenge ? 'Cualificado' : 'No'}}</p>
           <!-- /STATS DECORATION TITLE -->
 
           <!-- STATS DECORATION SUBTITLE -->
-          <p class="stats-decoration-subtitle">Profile Views</p>
+          <p class="stats-decoration-subtitle">Champions brawl</p>
           <!-- /STATS DECORATION SUBTITLE -->
 
           <!-- STATS DECORATION TEXT -->
@@ -334,7 +334,7 @@
         <!-- /WIDGET BOX CONTROLS -->
 
         <!-- WIDGET BOX TITLE -->
-        <p class="widget-box-title">Featured Badges</p>
+        <p class="widget-box-title">Brawlers más usados</p>
         <!-- /WIDGET BOX TITLE -->
 
         <!-- WIDGET BOX CONTENT -->
@@ -1358,8 +1358,48 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  name: "componentContent"
+  name: "componentContent",
+  data() {
+    return {
+      tag: '',
+      name: '',
+      trophies: 0,
+      highestTrophies: 0,
+      expLevel: 0,
+      expPoints: 0,
+      isQualifiedFromChampionshipChallenge: false,
+      threeVictories: 0,
+      soloVictories: 0,
+      duoVictories: 0,
+      clubID: '',
+      clubName: '',
+      createdAt: '',
+      updateAt: ''
+    }
+  },
+  mounted() {
+    let params = new URLSearchParams(location.search);
+    axios('/link-api/' + params.get('tag')).then(response => {
+      this.tag = response.data.tag
+      this.name = response.data.name
+      this.trophies = response.data.trophies
+      this.highestTrophies = response.data.highestTrophies
+      this.expLevel = response.data.expLevel
+      this.expPoints = response.data.expPoints
+      this.isQualifiedFromChampionshipChallenge = response.data.isQualifiedFromChampionshipChallenge
+      this.threeVictories = response.data['3vs3Victories']
+      this.soloVictories = response.data.soloVictories
+      this.duoVictories = response.data.duoVictories
+      this.clubID = response.data.club['tag']
+      this.clubName = response.data.club['name']
+
+      this.createdAt = response.data.createdAt
+      this.updateAt = response.data.updateAt
+    });
+  }
 }
 </script>
 

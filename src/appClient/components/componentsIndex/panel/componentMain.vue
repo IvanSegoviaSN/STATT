@@ -113,7 +113,7 @@ export default {
   },
   methods: {
     sendUserData() {
-      axios('/link-api/' + this.userTagName).then(response => response.data == 404 ? alert("NOPE") : window.location.replace("/panel"));
+      axios('/link-api/' + this.userTagName).then(response => response.data == 404 ? alert("NOPE") : window.location.replace("/panel?tag=" + this.userTagName));
     }
   }
 }
