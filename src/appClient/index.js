@@ -2,16 +2,20 @@ import Vue from "vue";
 import setUsernameOrID from "./components/setUsernameOrID.vue";
 import getUsernameOrID from "./components/getUsernameOrID.vue";
 
-import App from "./components/app.vue";
+import appInd from "./components/index.vue";
+import appPanel from "./components/panel.vue";
 
+Vue.config.productionTip = true;
+Vue.config.devtools = true;
 
+const index = new Vue({
+    render: h => h(appInd)
+}).$mount('#appIndex');
 
-new Vue({
-    render: h => h(App)
-}).$mount('#app');
+const panel = new Vue({
+    render: h => h(appPanel)
+}).$mount('#appPanel');
 
-
-Vue.config.productionTip = false;
 /*
 new Vue({
     render: h => h(getUsernameOrID)

@@ -56,16 +56,11 @@
 </template>
 
 <script>
-import componentMain from "./componentsIndex/componentMain.vue";
-import componentHelp from "./componentsIndex/componentHelp.vue";
+import componentMain from "./panel/componentMain.vue";
+import componentHelp from "./panel/componentHelp.vue";
 
 export default {
-  name: "app",
-  data() {
-    return {
-      casa: false
-    };
-  },
+  name: "index",
   components: {
     componentMain,
     componentHelp

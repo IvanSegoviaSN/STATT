@@ -16,11 +16,11 @@ app.use(express.json());
 app.use('/link-api', require('./routes/linkapi/link-apiRoutes'));
 
 app.get('/panel', async (req, res) => {
-    res.sendfile('./src/public/overview.html');
+    res.sendfile('./src/public/panel.html');
 });
 
 app.get('/', async (req, res) => {
-    res.sendfile('./src/public/inicio.html');
+    res.sendfile('./src/public/index.html');
 });
 
 // Static files
