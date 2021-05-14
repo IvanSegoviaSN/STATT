@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://brawlUser:wDAM7MeQcEg
     .catch(err => console.error("MongoDB: No se ha podido conectar."));
 
 // Settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3001);
 
 // Middlewares
 app.use(morgan("dev"));
