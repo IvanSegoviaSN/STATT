@@ -862,6 +862,7 @@
       <!-- /NAVIGATION WIDGET SECTION LINK -->
     </nav>
     <!-- /NAVIGATION WIDGET -->
+
   </div>
 </template>
 
