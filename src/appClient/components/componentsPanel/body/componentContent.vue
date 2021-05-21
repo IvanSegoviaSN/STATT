@@ -1393,7 +1393,7 @@ export default {
       this.threeVictories = response.data['3vs3Victories']
       this.soloVictories = response.data.soloVictories
       this.duoVictories = response.data.duoVictories
-      this.clubID = "none"
+      this.clubID = response.data.club['tag']
       this.clubName = response.data.club['name']
 
       this.createdAt = response.data.createdAt
