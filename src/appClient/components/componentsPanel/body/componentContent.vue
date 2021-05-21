@@ -8,11 +8,11 @@
       <!-- /SECTION BANNER ICON -->
 
       <!-- SECTION BANNER TITLE -->
-      <p class="section-banner-title">{{this.name + '#' + this.tag}}</p>
+      <p class="section-banner-title">{{this.name}}</p>
       <!-- /SECTION BANNER TITLE -->
 
       <!-- SECTION BANNER TEXT -->
-      <p class="section-banner-text">Review your account, see stats and more!</p>
+      <p class="section-banner-text">{{'#' + this.tag}}</p>
       <!-- /SECTION BANNER TEXT -->
     </div>
     <!-- /SECTION BANNER -->

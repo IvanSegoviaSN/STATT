@@ -36,7 +36,7 @@
         <div class="form-item">
           <!-- FORM INPUT -->
           <div class="form-input">
-            <label for="usertag">Nombre de usuario: </label>
+            <label for="usertag">{{this.selectedGame}}</label>
             <input v-model="userTagName" type="text" id="usertag" name="usertag">
           </div>
           <!-- /FORM INPUT -->
