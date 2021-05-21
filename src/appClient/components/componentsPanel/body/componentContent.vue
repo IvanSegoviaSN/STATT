@@ -828,9 +828,9 @@ export default {
   mounted() {
     let params = new URLSearchParams(location.search);
     axios('/link-api/' + params.get('tag')).then(response => {
-      if (typeof response == "object") {
-        console.log(response)
-        console.log(response.data)
+      if (response.data == 'BrawlAPI - Not Found') {
+        alert("Usuario no encontrado")
+      } else {
         this.tag = response.data.tag
         this.name = response.data.name
         this.trophies = response.data.trophies
