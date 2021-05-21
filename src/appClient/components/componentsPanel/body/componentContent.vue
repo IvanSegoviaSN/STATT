@@ -22,11 +22,11 @@
       <!-- SECTION HEADER INFO -->
       <div class="section-header-info">
         <!-- SECTION PRETITLE -->
-        <p class="section-pretitle">Overview</p>
+        <p class="section-pretitle">Inicio</p>
         <!-- /SECTION PRETITLE -->
 
         <!-- SECTION TITLE -->
-        <h2 class="section-title">My Profile</h2>
+        <h2 class="section-title">Perfil de usuario.</h2>
         <!-- /SECTION TITLE -->
       </div>
       <!-- /SECTION HEADER INFO -->
@@ -40,7 +40,7 @@
         <!-- PROFILE STATS COVER -->
         <div class="profile-stats-cover">
           <!-- PROFILE STATS COVER TITLE -->
-          <p class="profile-stats-cover-title">¡Bienvenid@!</p>
+          <p class="profile-stats-cover-title">Visualizando estadísticas del jugador: </p>
           <!-- /PROFILE STATS COVER TITLE -->
 
           <!-- PROFILE STATS COVER TEXT -->
