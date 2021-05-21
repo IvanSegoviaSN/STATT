@@ -12,6 +12,9 @@ const axios = require("axios");
 });
 */
 
+let arr = []
+
+
 router.get('/:tag', async (req, res) => {
     let next = true;
     const response = await axios({
