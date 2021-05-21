@@ -828,21 +828,27 @@ export default {
   mounted() {
     let params = new URLSearchParams(location.search);
     axios('/link-api/' + params.get('tag')).then(response => {
-      this.tag = response.data.tag
-      this.name = response.data.name
-      this.trophies = response.data.trophies
-      this.highestTrophies = response.data.highestTrophies
-      this.expLevel = response.data.expLevel
-      this.expPoints = response.data.expPoints
-      this.isQualifiedFromChampionshipChallenge = response.data.isQualifiedFromChampionshipChallenge
-      this.threeVictories = response.data['3vs3Victories']
-      this.soloVictories = response.data.soloVictories
-      this.duoVictories = response.data.duoVictories
-      this.clubID = response.data.club['tag']
-      this.clubName = response.data.club['name']
+      if (typeof response == "object") {
+        console.log(typeof response)
+        this.tag = response.data.tag
+        this.name = response.data.name
+        this.trophies = response.data.trophies
+        this.highestTrophies = response.data.highestTrophies
+        this.expLevel = response.data.expLevel
+        this.expPoints = response.data.expPoints
+        this.isQualifiedFromChampionshipChallenge = response.data.isQualifiedFromChampionshipChallenge
+        this.threeVictories = response.data['3vs3Victories']
+        this.soloVictories = response.data.soloVictories
+        this.duoVictories = response.data.duoVictories
+        this.clubID = response.data.club['tag']
+        this.clubName = response.data.club['name']
 
-      this.createdAt = response.data.createdAt
-      this.updateAt = response.data.updateAt
+        this.createdAt = response.data.createdAt
+        this.updateAt = response.data.updateAt
+      } else {
+        console.log(response)
+        console.log(typeof response)
+      }
     });
   }
 }
