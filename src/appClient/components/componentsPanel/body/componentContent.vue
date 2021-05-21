@@ -829,7 +829,8 @@ export default {
     let params = new URLSearchParams(location.search);
     axios('/link-api/' + params.get('tag')).then(response => {
       if (typeof response == "object") {
-        console.log(typeof response)
+        console.log(response)
+        console.log(response.data)
         this.tag = response.data.tag
         this.name = response.data.name
         this.trophies = response.data.trophies
@@ -845,9 +846,6 @@ export default {
 
         this.createdAt = response.data.createdAt
         this.updateAt = response.data.updateAt
-      } else {
-        console.log(response)
-        console.log(typeof response)
       }
     });
   }
