@@ -846,6 +846,7 @@ export default {
 
         this.createdAt = response.data.createdAt
         this.updateAt = response.data.updateAt
+
       }
     });
   }
