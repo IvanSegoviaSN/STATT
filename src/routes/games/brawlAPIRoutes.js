@@ -21,17 +21,26 @@ router.get('/:tag', async (req, res) => {
         url: `https://api.brawlstars.com/v1/players/%20${req.params.tag}`,
         method: "GET",
         headers: {
-            Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjQxNzJhZGE0LTQ1NTktNGNkNS04ZjQ5LWY4MGMyOGM5NzkyNCIsImlhdCI6MTYyMTU4NjQ0Miwic3ViIjoiZGV2ZWxvcGVyLzc5NmI4ODU5LWNiOGMtMGI2Yi05NDZjLWMyYzY4NzgzMjc3MiIsInNjb3BlcyI6WyJicmF3bHN0YXJzIl0sImxpbWl0cyI6W3sidGllciI6ImRldmVsb3Blci9zaWx2ZXIiLCJ0eXBlIjoidGhyb3R0bGluZyJ9LHsiY2lkcnMiOlsiNTIuMjEyLjE4My4xMDMiXSwidHlwZSI6ImNsaWVudCJ9XX0.PeGTMILqD10HONIoQmBo-N9e1mMj4_zVm-uQvDdf_Zdb-ADGGFVRS_TTNIpzOkP7OVNWKxWQ6smFxQZDl-QSGA"
+            Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6Ijk2ZTVmZDQ3LTJhNTUtNGJlYS04YWZiLTU2ZTI1YTA0MDNiOCIsImlhdCI6MTYyMDk5MzQ4NCwic3ViIjoiZGV2ZWxvcGVyLzc5NmI4ODU5LWNiOGMtMGI2Yi05NDZjLWMyYzY4NzgzMjc3MiIsInNjb3BlcyI6WyJicmF3bHN0YXJzIl0sImxpbWl0cyI6W3sidGllciI6ImRldmVsb3Blci9zaWx2ZXIiLCJ0eXBlIjoidGhyb3R0bGluZyJ9LHsiY2lkcnMiOlsiMTA4LjEyOC4xMjAuMzEiLCI3OS4xNDguODMuMTU2Il0sInR5cGUiOiJjbGllbnQifV19.5xUHnUCa9_K0KTpFHbPQoy3dZAeShWNME90dqnGXshp9srjFFrBN5Qhu3gzH0tKmASrPVgWQS0U-QtLjCmkk6A"
         }
     }).catch(err => {
         next = false;
-        res.send('No se han encontrado coincidencias.' + err)
+        findWithMongo();
     });
 
     next ? await findAndUpdate() : next = true;
 
+    async function findWithMongo() {
+        const result = await brawlModel.findOne({tag: req.params.tag});
+        if (result != null) {
+            res.json(result)
+        } else
+            res.send('BrawlAPI - Not Found')
+    }
+
     async function findAndUpdate() {
         await brawlModel.findOne({tag: req.params.tag}, (err, result) => {
+
             if (err || result == null) {
 
                 // New model
