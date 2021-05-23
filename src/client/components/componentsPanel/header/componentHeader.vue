@@ -53,7 +53,7 @@
           <!-- MENU MAIN ITEM -->
           <li class="menu-main-item">
             <!-- MENU MAIN ITEM LINK -->
-            <a class="menu-main-item-link" href="#">Inicio</a>
+            <a class="menu-main-item-link"><router-link to="/">Inicio</router-link></a>
             <!-- /MENU MAIN ITEM LINK -->
           </li>
           <!-- /MENU MAIN ITEM -->
@@ -69,7 +69,7 @@
           <!-- MENU MAIN ITEM -->
           <li class="menu-main-item">
             <!-- MENU MAIN ITEM LINK -->
-            <a class="menu-main-item-link" href="#">Faqs</a>
+            <a class="menu-main-item-link" @click="removeCookies">Faqs</a>
             <!-- /MENU MAIN ITEM LINK -->
           </li>
           <!-- /MENU MAIN ITEM -->
@@ -77,7 +77,7 @@
           <!-- MENU MAIN ITEM -->
           <li class="menu-main-item">
             <!-- MENU MAIN ITEM LINK -->
-            <a class="menu-main-item-link" href="#">Contacto</a>
+            <a class="menu-main-item-link"><router-link to="/about">Contacto</router-link></a>
             <!-- /MENU MAIN ITEM LINK -->
           </li>
           <!-- /MENU MAIN ITEM -->
@@ -968,7 +968,30 @@
 
 <script>
 export default {
-  name: "componentHeader"
+  name: "componentHeader",
+  data() {
+    return {
+      change: true
+    }
+  },
+  methods: {
+    removeCookies() {
+      document.cookie = 'tag=;';
+      window.location.reload()
+    },
+    changeBoolean() {
+      if (this.change) {
+        this.change = false;
+      } else {
+        this.change = true;
+      }
+    }
+  },
+  watch: {
+    change() {
+      this.$emit('changePanel', this.change)
+    }
+  }
 }
 </script>
 

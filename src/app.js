@@ -15,10 +15,6 @@ app.use(express.json());
 // Routes
 app.use('/link-api', require('./routes/linkapi/link-apiRoutes'));
 
-app.get('/panel', async (req, res) => {
-    res.sendfile('./src/public/inicio.html');
-});
-
 app.get('/', async (req, res) => {
     res.sendfile('./src/public/index.html');
 });
