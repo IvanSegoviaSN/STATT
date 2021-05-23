@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const royaleModel = new Schema({
+const clashModel = new Schema({
     tag: {
         type: String,
         required: true,
@@ -10,16 +10,17 @@ const royaleModel = new Schema({
         max: 10
     },
     name: String,
+    townHallLevel: Number,
     expLevel: Number,
     trophies: Number,
     bestTrophies: Number,
-    wins: Number,
-    losses: Number,
-    battleCount: Number,
-    threeCrownWins: Number,
-    challengeCardsWon: Number,
-    challengeMaxWins: Number,
-    totalDonations: Number,
+    warStars: Number,
+    attackWins: Number,
+    defenseWins: Number,
+    builderHallLevel: Number,
+    versusTrophies: Number,
+    bestVersusTrophies: Number,
+    versusBattleWins: Number,
     clan: {
         type: { tag: String, name: String },
         index: false
@@ -27,4 +28,4 @@ const royaleModel = new Schema({
 
 }, { timestamps: true });
 
-module.exports = mongoose.model('Users_ClashRoyale', royaleModel);
+module.exports = mongoose.model('Users_ClashOfClans', clashModel);

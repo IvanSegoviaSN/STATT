@@ -6,15 +6,6 @@ const brawlModel = require('../../models/games/brawlModel');
 // Axios HTTP
 const axios = require("axios");
 
-/*router.get('/:tag', async (req, res) => {
-    const data = await brawlModel.find({tag: req.params.tag});
-    data.toString().length < 1 ? res.sendStatus(404) : res.json(data);
-});
-*/
-
-let arr = []
-
-
 router.get('/:tag', async (req, res) => {
     let next = true;
     const response = await axios({
