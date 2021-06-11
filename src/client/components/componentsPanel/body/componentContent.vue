@@ -2297,7 +2297,7 @@ export default {
   methods: {
     settingsAddGame(value) {
       if (this.settingsTag != '') {
-        console.log("asdads")
+        console.log("")
       } else {
         this.settingsAddGames = value
         this.settingsInputAddGame = !value

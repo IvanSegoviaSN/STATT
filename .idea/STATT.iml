@@ -5,6 +5,9 @@
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/src/public/sass" />
+      <excludeFolder url="file://$MODULE_DIR$/src/public/img" />
+      <excludeFolder url="file://$MODULE_DIR$/src/public/css" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

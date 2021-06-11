@@ -152,7 +152,7 @@ export default {
   methods: {
     changeOrder(response) {
       if (getCookie("tag") != "") {
-        // Response ej. response.name
+        // Response response.name (If not possible reload)
         window.location.reload()
       }
     }
