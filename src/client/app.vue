@@ -129,8 +129,6 @@
 
       <component-header></component-header>
 
-      <component-mobile-bar/>
-
       <component-content></component-content>
 
     </div>
@@ -142,7 +140,6 @@ import componentFormIndex from "./components/componentsIndex/index.vue";
 
 import componentHeader from "./components/componentsPanel/header/componentHeader.vue";
 import componentNavigation from "./components/componentsPanel/header/componentNavigation.vue";
-import componentMobileBar from "./components/componentsPanel/body/componentBar.vue";
 import componentContent from "./components/componentsPanel/body/componentContent.vue";
 
 export default {
@@ -171,7 +168,6 @@ export default {
     componentFormIndex,
     componentHeader,
     componentNavigation,
-    componentMobileBar,
     componentContent
   }
 }

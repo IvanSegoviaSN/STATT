@@ -1,5 +1,4 @@
 
-
 function returnData(data) {
     let jsonData = {
         tag: data.tag,
