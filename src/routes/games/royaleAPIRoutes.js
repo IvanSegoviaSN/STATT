@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// BrawlStars model
+// RoyaleStars model
 const royaleModel = require('../../models/games/royaleModel');
 // Axios HTTP
 const axios = require("axios");
