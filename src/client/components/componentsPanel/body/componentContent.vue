@@ -97,7 +97,7 @@
                     <!-- FORM SELECT -->
                     <div class="form-select v2">
                       <select id="ve-monthly-report-date" name="ve_monthly_report_date">
-                        <option value="0">Mayo 2021</option>
+                        <option value="0">Junio 2021</option>
                       </select>
                       <!-- FORM SELECT ICON -->
                       <svg class="form-select-icon icon-small-arrow">
@@ -281,8 +281,8 @@
                 <!-- /FEATURED STAT LIST -->
 
                 <div style="display: flex; flex-flow: wrap; justify-content: space-around; margin-top: 3rem;">
-                  <p>Fecha de creación: {{ new Date().getDate() - 15 }}/05/2021</p>
-                  <p>Última actualización: {{ new Date().getDate() }}/05/2021</p>
+                  <p>Fecha de creación: {{ new Date().getDate() - 9 }}/05/2021</p>
+                  <p>Última actualización: {{ new Date().getDate() }}/06/2021</p>
                 </div>
               </div>
               <!-- /PROFILE STATS INFO -->
